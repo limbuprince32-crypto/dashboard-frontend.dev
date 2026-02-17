@@ -85,12 +85,12 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
     {
       id: "calendar",
       icon: Calendar,
-      label: "calendar",
+      label: "Calendar",
     },
     {
       id: "reports",
       icon: FileText,
-      label: "reports",
+      label: "Reports",
     },
     {
       id: "settings",
@@ -100,7 +100,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
   ];
   return (
     <div
-      className={`${collapsed ? "w-20" : "w-72"}transition duration-300 ease-in-out bg-white/80 dark:bg-slate-200/80 
+      className={`${collapsed ? "w-20" : "w-72"}transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-200/80 
   backdrop-blur-xl  border-slate-200/40 dark:border-slate-200/40 flex flex-col`}
     >
       <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50">
@@ -143,17 +143,19 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
                   <item.icon className={`w-5 h-5`} />
                   <>
                     {!collapsed && (
-                      <span className="font-medium ml-2">{item.label}</span>
-                    )}
-                    {item.badge && (
-                      <span className="px-2 py-1 text-xs bg-red-500 text-white rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                    {item.count && (
-                      <span className="px-2 py-1 text-xs bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full">
-                        {item.count}
-                      </span>
+                      <>
+                        <span className="font-medium ml-2">{item.label}</span>
+                        {item.badge && (
+                          <span className="px-2 py-1 text-xs bg-red-500 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                        {item.count && (
+                          <span className="px-2 py-1 text-xs bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full">
+                            {item.count}
+                          </span>
+                        )}
+                      </>
                     )}
                   </>
                 </div>

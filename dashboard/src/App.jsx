@@ -1,6 +1,8 @@
 import Sidebar from "./components/layouts/Sidebar";
 import Header from "./components/layouts/Header";
 import { useState } from "react";
+import Dashboard from "./components/layouts/Dashboard/Dashboard";
+import StarGrid from "./components/layouts/Dashboard/StarGrid";
 
 const App = () => {
   const [sideBarCollapsed, setSideBarCollapsed] = useState(false);
@@ -22,6 +24,11 @@ const App = () => {
             sideBarCollapsed={sideBarCollapsed}
             onToggleSideBar={() => setSideBarCollapsed(!sideBarCollapsed)}
           />
+          <main className="flex-1 overflow-y-auto bg-transparent">
+            <div className="p-6 space-y-6">
+              {currentPage === "dashboard" && <Dashboard />}
+            </div>
+          </main>
         </div>
       </div>
     </div>

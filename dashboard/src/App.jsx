@@ -8,7 +8,7 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState("dashboard");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 transition-all duration-500">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 transition-all duration-500">
       <div className="flex h-screen">
         <Sidebar
           collapsed={sideBarCollapsed}
